@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ana's Routine — 3D Organizer</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Fundo 3D Interativo com Corações Flutuantes -->
+    <div class="bg-3d-scene">
+        <!-- Coração 3D 1 (Grande) -->
+        <div class="shape shape-heart heart-1">
+            <div class="heart-3d">
+                <div class="heart-left"></div>
+                <div class="heart-right"></div>
+            </div>
+        </div>
+
+        <!-- Coração 3D 2 (Médio) -->
+        <div class="shape shape-heart heart-2">
+            <div class="heart-3d">
+                <div class="heart-left"></div>
+                <div class="heart-right"></div>
+            </div>
+        </div>
+
+        <!-- Coração 3D 3 (Pequeno) -->
+        <div class="shape shape-heart heart-3">
+            <div class="heart-3d">
+                <div class="heart-left"></div>
+                <div class="heart-right"></div>
+            </div>
+        </div>
+
+        <!-- Coração 3D 4 (Glow ao Fundo) -->
+        <div class="shape shape-heart heart-4">
+            <div class="heart-3d">
+                <div class="heart-left"></div>
+                <div class="heart-right"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Conteúdo Principal -->
+    <main class="container">
+        <header class="header">
+            <span class="badge">PERSONAL DASHBOARD</span>
+            <h1 class="title">Ana's Routine</h1>
+            <p class="subtitle">Organização diária, estudos, natação, leitura e hábitos de vida.</p>
+        </header>
+
+        <section class="grid-cards">
+            <!-- Card Estudo -->
+            <article class="card" onclick="openModal('modal-estudo')">
+                <div class="card-icon">📚</div>
+                <h3>Estudo</h3>
+                <p>Escola no período da manhã e aulas extracurriculares à tarde.</p>
+                <div class="card-tag">Foco & Aprendizado</div>
+                <button class="btn-details">Ver Detalhes →</button>
+            </article>
+
+            <!-- Card Trabalho -->
+            <article class="card" onclick="openModal('modal-trabalho')">
+                <div class="card-icon">🏠</div>
+                <h3>Trabalho</h3>
+                <p>Organização pessoal e auxílio diário nas tarefas de casa.</p>
+                <div class="card-tag">Responsabilidade</div>
+                <button class="btn-details">Ver Detalhes →</button>
+            </article>
+
+            <!-- Card Lazer -->
+            <article class="card" onclick="openModal('modal-lazer')">
+                <div class="card-icon">🍿</div>
+                <h3>Lazer</h3>
+                <p>Momentos de relaxamento com leitura de livros e filmes.</p>
+
+                <div class="card-tag">Entretenimento</div>
+                <button class="btn-details">Ver Detalhes →</button>
+            </article>
+
+            <!-- Card Hobby -->
+            <article class="card" onclick="openModal('modal-hobby')">
+                <div class="card-icon">💡</div>
+                <h3>Hobby</h3>
+                <p>Estudar assuntos do meu interesse por puro prazer e curiosidade.</p>
+                <div class="card-tag">Paixão por Aprender</div>
+                <button class="btn-details">Ver Detalhes →</button>
+            </article>
+
+            <!-- Card Esportes -->
+            <article class="card" onclick="openModal('modal-esportes')">
+                <div class="card-icon">🏊‍♀️</div>
+                <h3>Esportes</h3>
+                <p>Aulas de natação para fortalecimento físico e resistência.</p>
+                <div class="card-tag">Saúde & Movimento</div>
+                <button class="btn-details">Ver Detalhes →</button>
+            </article>
+
+            <!-- Card Saúde -->
+            <article class="card" onclick="openModal('modal-saude')">
+                <div class="card-icon">🥗</div>
+                <h3>Saúde</h3>
+                <p>Alimentação boa, balanceada e rica em nutrientes no dia a dia.</p>
+                <div class="card-tag">Nutrição & Bem-estar</div>
+                <button class="btn-details">Ver Detalhes →</button>
+            </article>
+        </section>
+    </main>
+
+    <!-- Modais -->
+    <div class="modal-overlay" id="modalOverlay" onclick="closeModalOnOverlay(event)">
+        
+        <!-- Modal Estudo -->
+        <div class="modal" id="modal-estudo">
+            <button class="modal-close" onclick="closeModal()">&times;</button>
+            <div class="modal-header">
+                <span>📚</span>
+                <h2>Rotina de Estudos</h2>
+            </div>
+            <div class="modal-body">
+                <h4>Horários & Atividades</h4>
+                <ul>
+                    <li><strong>Período da Manhã:</strong> Aulas regulares na escola com atenção total.</li>
+                    <li><strong>Período da Tarde:</strong> Aulas extracurriculares e atividades complementares.</li>
+                    <li><strong>Revisão:</strong> Organização diária do material escolar e tarefas pendentes.</li>
+                </ul>
+                <div class="status-bar"><div class="progress" style="width: 85%;"></div></div>
+                <span class="status-text">85% do cronograma escolar cumprido</span>
+            </div>
+        </div>
+
+        <!-- Modal Trabalho -->
+        <div class="modal" id="modal-trabalho">
+            <button class="modal-close" onclick="closeModal()">&times;</button>
+            <div class="modal-header">
+                <span>🏠</span>
+                <h2>Rotina de Trabalho (Tarefas de Casa)</h2>
+            </div>
+            <div class="modal-body">
+                <h4>Contribuições Diárias</h4>
+                <ul>
+                    <li>Manter o quarto limpo e organizado.</li>
+                    <li>Ajudar a arrumar a mesa e lavar a louça pós-refeições.</li>
+                    <li>Auxiliar na organização geral da casa durante o fim de tarde.</li>
+                </ul>
+                <div class="status-bar"><div class="progress" style="width: 100%;"></div></div>
+                <span class="status-text">Tarefas de casa concluídas com sucesso!</span>
+            </div>
+        </div>
+
+        <!-- Modal Lazer -->
+        <div class="modal" id="modal-lazer">
+            <button class="modal-close" onclick="closeModal()">&times;</button>
+            <div class="modal-header">
+                <span>🍿</span>
+                <h2>Tempo de Lazer</h2>
+            </div>
+            <div class="modal-body">
+                <h4>Atividades de Descompressão</h4>
+                <ul>
+                    <li><strong>Leitura:</strong> Páginas diárias de livros de ficção e aventuras.</li>
+                    <li><strong>Cinema em Casa:</strong> Filmes e séries favoritas nos momentos livres.</li>
+                    <li><strong>Pausa Desconectada:</strong> Tempo para relaxar a mente após a rotina.</li>
+                </ul>
+                <div class="status-bar"><div class="progress" style="width: 90%;"></div></div>
+                <span class="status-text">Meta de descansos e leituras da semana ok</span>
+            </div>
+        </div>
+
+        <!-- Modal Hobby -->
+        <div class="modal" id="modal-hobby">
+            <button class="modal-close" onclick="closeModal()">&times;</button>
+            <div class="modal-header">
+                <span>💡</span>
+                <h2>Meu Hobby — Estudar</h2>
+            </div>
+            <div class="modal-body">
+                <h4>Aprendizado Livre & Curiosidade</h4>
+                <ul>
+                    <li>Pesquisar temas de interesse próprio que não caem na prova da escola.</li>
+                    <li>Assistir a documentários e tutoriais motivacionais.</li>
+                    <li>Fazer anotações criativas e mapas mentais por pura diversão.</li>
+                </ul>
+                <div class="status-bar"><div class="progress" style="width: 75%;"></div></div>
+                <span class="status-text">75% da meta semanal de estudo por prazer</span>
+            </div>
+        </div>
+
+        <!-- Modal Esportes -->
+        <div class="modal" id="modal-esportes">
+            <button class="modal-close" onclick="closeModal()">&times;</button>
+            <div class="modal-header">
+                <span>🏊‍♀️</span>
+                <h2>Rotina Esportiva — Natação</h2>
+            </div>
+            <div class="modal-body">
+                <h4>Treinos na Piscina</h4>
+                <ul>
+                    <li>Aulas de natação focadas em técnica, respiração e nados variados.</li>
+                    <li>Exercícios de resistência física e capacidade cardiorrespiratória.</li>
+                    <li>Alongamento antes e depois da prática aquática.</li>
+                </ul>
+                <div class="status-bar"><div class="progress" style="width: 95%;"></div></div>
+                <span class="status-text">Excelente desempenho e assiduidade na natação</span>
+            </div>
+        </div>
+
+        <!-- Modal Saúde -->
+        <div class="modal" id="modal-saude">
+            <button class="modal-close" onclick="closeModal()">&times;</button>
+            <div class="modal-header">
+                <span>🥗</span>
+                <h2>Saúde & Alimentação Boa</h2>
+            </div>
+            <div class="modal-body">
+                <h4>Hábitos Nutritivos da Ana</h4>
+                <ul>
+                    <li><strong>Alimentação Saudável:</strong> Refeições ricas em frutas, verduras e vegetais.</li>
+                    <li><strong>Hidratação:</strong> Consumo regular de água durante o dia e nas aulas de natação.</li>
+                    <li><strong>Energia:</strong> Snacks leves e nutritivos antes dos treinos.</li>
+                </ul>
+                <div class="status-bar"><div class="progress" style="width: 90%;"></div></div>
+                <span class="status-text">Alimentação saudável e boa energia garantidas</span>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Script Inline -->
+    <script>
+        // Função para abrir o modal desejado
+        function openModal(modalId) {
+            const overlay = id('modalOverlay');
+            const modals = document.querySelectorAll('.modal');
+            
+            // Oculta todos os modais primeiro
+            modals.forEach(m => m.classList.remove('active'));
+
+            // Exibe a camada overlay e o modal específico
+            const targetModal = id(modalId);
+            if (targetModal) {
+                overlay.classList.add('active');
+                targetModal.classList.add('active');
+            }
+        }
+
+        // Função para fechar qualquer modal ativo
+        function closeModal() {
+            const overlay = id('modalOverlay');
+            const modals = document.querySelectorAll('.modal');
+            
+            overlay.classList.remove('active');
+            modals.forEach(m => m.classList.remove('active'));
+        }
+
+        // Fechar ao clicar fora do conteúdo do modal
+        function closeModalOnOverlay(event) {
+            if (event.target.id === 'modalOverlay') {
+                closeModal();
+            }
+        }
+
+        // Atalho com a tecla ESC para fechar modais
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeModal();
+            }
+        });
+
+        // Auxiliar
+        function id(elementId) {
+            return document.getElementById(elementId);
+        }
+    </script>
+</body>
+</html>
